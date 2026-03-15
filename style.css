@@ -80,3 +80,10 @@ transition:transform 0.2s;
 .project:hover{
 transform:translateY(-5px);
 }
+.profile-pic{
+width:150px;
+height:150px;
+border-radius:50%;
+margin-bottom:15px;
+border:4px solid white;
+}
