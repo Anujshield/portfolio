@@ -199,3 +199,33 @@ text-align:center;
 font-size:40px;
 color:#00adb5;
 }
+.dark-btn{
+padding:8px 15px;
+border:none;
+background:#222;
+color:white;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.dark-mode{
+background:#121212;
+color:white;
+}
+
+.dark-mode header{
+background:#1e1e1e;
+}
+
+.dark-mode section{
+background:#1a1a1a;
+}
+
+.dark-mode .project{
+background:#222;
+}
+
+.dark-mode .skill-bar{
+background:#333;
+}
