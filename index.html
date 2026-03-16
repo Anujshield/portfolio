@@ -14,7 +14,7 @@
 
 <h1>Anuj Yadav</h1>
 
-<p>Data Analyst | Python | SQL | Machine Learning</p>
+<p>I am a <span id="typing"></span></p>
 
 <p>
 I analyze data to uncover insights and build data-driven solutions
@@ -142,6 +142,38 @@ Used SQL queries to analyze large datasets and extract business insights.
 </p>
 
 </footer>
+  <script>
+
+const text = ["Data Analyst", "Python Developer", "SQL Analyst", "Machine Learning Enthusiast"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type() {
+
+if (count === text.length) {
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if (letter.length === currentText.length) {
+count++;
+index = 0;
+setTimeout(type, 1000);
+} else {
+setTimeout(type, 100);
+}
+
+}
+
+type();
+
+</script>
 </body>
 
 </html>
