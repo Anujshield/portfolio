@@ -39,6 +39,30 @@ I am an aspiring Data Analyst passionate about data analytics, machine learning,
 and building data-driven solutions using Python and SQL.
 </p>
 </section>
+  <section id="stats">
+
+<h2>My Achievements</h2>
+
+<div class="stats-container">
+
+<div class="stat">
+<h3 class="counter" data-target="5">0</h3>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="8">0</h3>
+<p>Technologies Learned</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="20">0</h3>
+<p>GitHub Repositories</p>
+</div>
+
+</div>
+
+</section>
 
 <section id="skills">
 
@@ -82,44 +106,36 @@ and building data-driven solutions using Python and SQL.
 </section>
 
 <section id="projects">
+
 <h2>Projects</h2>
+
+<div class="filter-buttons">
+<button onclick="filterProjects('all')">All</button>
+<button onclick="filterProjects('data')">Data</button>
+<button onclick="filterProjects('ml')">ML</button>
+<button onclick="filterProjects('python')">Python</button>
+</div>
 
 <div class="projects-grid">
 
-<div class="project">
-
-<h3>Log Analytics Platform</h3>
-
-<p>
-A log monitoring system built with Python and AWS to analyze application logs.
-</p>
-
-<a href="https://github.com/anujshield" target="_blank">View Project</a>
-
-</div>
-
-<div class="project">
-
-<h3>ML Dataset Analysis</h3>
-
-<p>
-Performed data analysis and model evaluation using Python and NumPy.
-</p>
-
-<a href="https://github.com/anujshield" target="_blank">View Project</a>
-
-</div>
-<div class="project">
+<div class="project" data-category="data">
 <h3>SQL Data Exploration</h3>
-<p>
-Used SQL queries to analyze large datasets and extract business insights.
-</p>
+<p>Analyzed datasets using SQL queries to extract insights.</p>
+</div>
+
+<div class="project" data-category="ml">
+<h3>ML Dataset Analysis</h3>
+<p>Evaluated model performance using Python and NumPy.</p>
+</div>
+
+<div class="project" data-category="python">
+<h3>Log Analytics Platform</h3>
+<p>Built a log analysis system using Python and AWS.</p>
 </div>
 
 </div>
 
 </section>
-
 <section>
 <h2>Resume</h2>
 
@@ -198,6 +214,57 @@ setTimeout(type, 100);
 }
 
 type();
+
+</script>
+  <script>
+
+function filterProjects(category){
+
+const projects = document.querySelectorAll(".project");
+
+projects.forEach(project => {
+
+if(category === "all"){
+project.style.display = "block";
+}
+else if(project.dataset.category === category){
+project.style.display = "block";
+}
+else{
+project.style.display = "none";
+}
+
+});
+
+}
+
+</script>
+  <script>
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute('data-target');
+const count = +counter.innerText;
+
+const increment = target / 100;
+
+if(count < target){
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCounter,20);
+}
+else{
+counter.innerText = target;
+}
+
+};
+
+updateCounter();
+
+});
 
 </script>
 </body>
